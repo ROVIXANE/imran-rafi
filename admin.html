@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bn" data-lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0f1e">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Imran Rafi</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="translations/bn.js" defer></script>
+  <script src="translations/en.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <!-- ===== Login ===== -->
+  <section class="login-wrap" id="login-view">
+    <div class="login-card">
+      <div class="login-brand">
+        <span class="brand-mark" aria-hidden="true">IR</span>
+        <div><strong data-i18n="admin.brand">অ্যাডমিন প্যানেল</strong><small data-i18n="admin.tagline">কনটেন্ট ব্যবস্থাপনা</small></div>
+      </div>
+      <h1 data-i18n="admin.loginTitle">অ্যাডমিনে প্রবেশ</h1>
+      <p class="muted" data-i18n="admin.loginSub">ইমেইল ও পাসওয়ার্ড দিয়ে সাইন ইন করুন।</p>
+
+      <div class="notice" id="config-notice" hidden>
+        <strong data-i18n="admin.noConfig">Supabase কনফিগার করা হয়নি</strong>
+        <p data-i18n="admin.noConfigText">প্রথমে GitHub Secrets সেট করুন।</p>
+      </div>
+
+      <form id="login-form" novalidate>
+        <label><span data-i18n="admin.email">ইমেইল</span><input type="email" id="login-email" autocomplete="username" required placeholder="you@example.com"></label>
+        <label><span data-i18n="admin.password">পাসওয়ার্ড</span><input type="password" id="login-password" autocomplete="current-password" required placeholder="••••••••"></label>
+        <p class="form-error" id="login-error" role="alert" hidden></p>
+        <button type="submit" class="btn-primary block" id="login-submit"><span data-i18n="admin.signIn">সাইন ইন</span></button>
+      </form>
+      <div class="login-foot"><a href="index.html">← <span data-i18n="admin.viewSite">ওয়েবসাইট দেখুন</span></a></div>
+    </div>
+  </section>
+
+  <!-- ===== Admin app ===== -->
+  <div class="admin-app" id="app-view" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <span class="brand-mark" aria-hidden="true">IR</span>
+        <div><strong data-i18n="admin.brand">অ্যাডমিন প্যানেল</strong><small>imran-rafi</small></div>
+      </div>
+      <nav class="side-nav" id="side-nav" aria-label="Admin navigation">
+        <button type="button" class="side-link is-active" data-view="dashboard"><span aria-hidden="true">▦</span><span data-i18n="admin.dashboard">ড্যাশবোর্ড</span></button>
+        <button type="button" class="side-link" data-view="profile"><span aria-hidden="true">👤</span><span data-i18n="admin.profile">প্রোফাইল</span></button>
+        <button type="button" class="side-link" data-view="projects"><span aria-hidden="true">🧩</span><span data-i18n="admin.projects">প্রকল্প</span></button>
+        <button type="button" class="side-link" data-view="gallery"><span aria-hidden="true">🖼️</span><span data-i18n="admin.gallery">গ্যালারি</span></button>
+        <button type="button" class="side-link" data-view="skills"><span aria-hidden="true">📈</span><span data-i18n="admin.skills">দক্ষতা</span></button>
+        <button type="button" class="side-link" data-view="education"><span aria-hidden="true">🎓</span><span data-i18n="admin.education">শিক্ষা</span></button>
+        <button type="button" class="side-link" data-view="interests"><span aria-hidden="true">✨</span><span data-i18n="admin.interests">আগ্রহ</span></button>
+        <button type="button" class="side-link" data-view="social_links"><span aria-hidden="true">🔗</span><span data-i18n="admin.socials">সোশ্যাল লিংক</span></button>
+        <button type="button" class="side-link" data-view="site_settings"><span aria-hidden="true">⚙️</span><span data-i18n="admin.settings">সাইট সেটিংস</span></button>
+        <button type="button" class="side-link" data-view="backup"><span aria-hidden="true">💾</span><span data-i18n="admin.backup">ব্যাকআপ</span></button>
+      </nav>
+      <div class="side-foot">
+        <a class="side-link" href="index.html" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span><span data-i18n="admin.viewSite">ওয়েবসাইট দেখুন</span></a>
+        <button type="button" class="side-link" id="logout-btn"><span aria-hidden="true">⇥</span><span data-i18n="admin.logout">লগ আউট</span></button>
+      </div>
+    </aside>
+
+    <div class="admin-main-wrap">
+      <header class="admin-topbar">
+        <button type="button" class="menu-btn" id="admin-menu" aria-label="Menu" aria-expanded="false">☰</button>
+        <div class="topbar-title" id="topbar-title">ড্যাশবোর্ড</div>
+        <div class="topbar-actions">
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn is-active" data-lang="bn">বাংলা</button>
+            <span class="lang-divider" aria-hidden="true">|</span>
+            <button type="button" class="lang-btn" data-lang="en">English</button>
+          </div>
+          <span class="user-email" id="user-email"></span>
+        </div>
+      </header>
+      <main class="admin-content" id="admin-content"></main>
+    </div>
+  </div>
+
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite" hidden></div>
+  <div class="modal-root" id="modal-root" hidden></div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+</body>
+</html>

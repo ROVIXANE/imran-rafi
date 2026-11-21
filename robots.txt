@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /js/config.js
+Disallow: /js/config.example.js
+Disallow: /supabase/
+
+Sitemap: https://rmd734412-web.github.io/imran-rafi/sitemap.xml
