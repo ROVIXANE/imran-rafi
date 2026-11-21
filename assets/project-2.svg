@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img" aria-label="AI automation workflow illustration">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c254c"/><stop offset="1" stop-color="#0a1224"/></linearGradient><pattern id="p" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#818cf8" stroke-opacity="0.07"/></pattern></defs>
+  <rect width="600" height="360" fill="url(#g)"/><rect width="600" height="360" fill="url(#p)"/>
+  <g fill="#818cf8" fill-opacity="0.18" stroke="#a5b4fc" stroke-opacity="0.6" stroke-width="2">
+    <rect x="110" y="140" width="100" height="66" rx="12"/><rect x="250" y="140" width="100" height="66" rx="12"/><rect x="390" y="140" width="100" height="66" rx="12"/>
+  </g>
+  <g stroke="#a5b4fc" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round"><path d="M212 173h34M352 173h34"/><path d="m240 167 8 6-8 6M380 167l8 6-8 6"/></g>
+  <g fill="#c7d2fe" fill-opacity="0.8"><circle cx="160" cy="173" r="7"/><circle cx="300" cy="173" r="7"/><circle cx="440" cy="173" r="7"/></g>
+  <text x="300" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#a5b4fc">SMART AUTOMATION LAB</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Gallery placeholder 4">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2d3d"/><stop offset="1" stop-color="#0a1224"/></linearGradient><pattern id="p" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#2dd4bf" stroke-opacity="0.08"/></pattern></defs>
+  <rect width="600" height="600" fill="url(#g)"/><rect width="600" height="600" fill="url(#p)"/>
+  <g fill="none" stroke="#2dd4bf" stroke-opacity="0.45" stroke-width="2">
+    <circle cx="300" cy="270" r="85"/><circle cx="300" cy="270" r="55"/><circle cx="300" cy="270" r="25"/>
+  </g>
+  <g stroke="#5eead4" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"><path d="M190 270h-40M450 270h-40M300 160v-40M300 420v-40"/></g>
+  <g fill="#5eead4" fill-opacity="0.5"><circle cx="150" cy="270" r="6"/><circle cx="450" cy="270" r="6"/><circle cx="300" cy="120" r="6"/><circle cx="300" cy="420" r="6"/></g>
+  <text x="300" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="#5eead4">04 · TESTING</text>
+  <text x="300" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="2" fill="#6f819e">REPLACE WITH YOUR PHOTO</text>
+</svg>
